@@ -3,6 +3,7 @@
 
 #include <unistd.h>
 #include <sys/types.h>
+#include <signal.h>
 #include "../libft/libft.h"
 #include <stdio.h>
 #endif
