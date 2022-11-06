@@ -7,8 +7,8 @@ CLIENT    = client
 OBJ_S_DIR   = obj
 LIBFT     = libft.a
 HEADERS   = ./headers/server.h
-TARGET_S    = server/server.c 
-TARGET_C    = client/client.c 
+TARGET_S    = server/server.c utils/show_message.c  
+TARGET_C    = client/client.c utils/show_message.c
 OBJ_S_DIR   = obj
 SRC_S       = $(addprefix ./src/, $(TARGET_S))
 SRC_C       = $(addprefix ./src/, $(TARGET_C))
@@ -22,10 +22,10 @@ $(LIBFT):
 	@make -C libft 
 
 $(SERVER): $(LIBFT)  
-	$(CC) $(SRC_S) $(CFLAGS) $(LIBS) -o $(SERVER)
+	$(CC) $(SRC_S) $(CFLAGS) $(GDB_FLAG) $(LIBS) -o $(SERVER)
 
 $(CLIENT): $(LIBFT) 
-	$(CC) $(SRC_C) $(CFLAGS) $(LIBS) -o $(CLIENT)
+	$(CC) $(SRC_C) $(CFLAGS) $(GDB_FLAG) $(LIBS) -o $(CLIENT)
 
 clean:
 	@make clean -C libft 
