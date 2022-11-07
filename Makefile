@@ -1,5 +1,5 @@
-CC		  	= clang
-GDB_FLAG  	= -g 
+CC		  	= gcc
+GDB_FLAG  	= -ggdb -fsanitize=address -fno-omit-frame-pointer
 CFLAGS    	= -Wall -Wextra -Werror
 LIBS      	= -L libft -lft
 SERVER    	= server
@@ -29,12 +29,6 @@ $(CLIENT): $(SRC_C)
 	$(CC) $(SRC_C) $(CFLAGS) $(GDB_FLAG) $(LIBS) -o $(CLIENT)
 
 
-clean:
-	@make clean -C libft 
-	rm -f $(OBJ_S)
-	rm -f $(OBJ_C)
-	@echo "files deleted"
-
 fclean: clean 
 	@make fclean -C libft
 	rm -f	 $(SERVER)
@@ -42,6 +36,13 @@ fclean: clean
 	rm -rf $(OBJ_S_DIR)
 	rm -rf $(LIBFT)
 	@echo "binaries deleted"
+
+clean:
+	@make clean -C libft 
+	rm -f $(OBJ_S)
+	rm -f $(OBJ_C)
+	@echo "files deleted"
+
 
 re: $(NAME)
 
