@@ -1,4 +1,4 @@
-<h1 align="center">42 libft</h1>  
+<h1 align="center">42 Minitalk</h1>  
 
 > My last project of first step at [42 São Paulo](https://www.42sp.org.br/), where i need to write a client/server that communicate using unix signals
 
