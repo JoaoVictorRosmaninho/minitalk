@@ -16,4 +16,4 @@
    - Otimization with bitwise operations
    - problem solving
    
-problem solving(https://valgrind.org/))  
+without memory leaks(https://valgrind.org/))  
